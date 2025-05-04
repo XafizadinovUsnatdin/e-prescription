@@ -1,10 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Retsept Yozish{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Retsept Yozish</h1>
+    <div class="card shadow p-4">
+        <form method="POST" id="prescriptionForm">
+            <div class="mb-3">
+                <label class="form-label">Kasallik</label>
+                <input type="text" name="diagnosis" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Belgilar</label>
+                <textarea name="symptoms" class="form-control" rows="4"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dori qo'shish</label>
+                <div class="input-group">
+                    <input type="text" id="medicationInput" class="form-control" placeholder="Dori nomini kiriting">
+                    <button type="button" id="addMedication" class="btn btn-secondary">Qo'shish</button>
+                </div>
+                <ul id="medicationList" class="list-group mt-2">
+                    <!-- Medications will be added here dynamically -->
+                </ul>
+                <input type="hidden" name="medications" id="medicationsField">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dori turi</label>
+                <input type="text" name="drug_type" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Davomiyligi</label>
+                <input type="text" name="duration" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Foydalanish</label>
+                <input type="text" name="usage" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Qo\'shimcha ma\'lumot</label>
+                <textarea name="info" class="form-control" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Retsept Yozish</button>
+        </form>
+    </div>
+</div>
+<script>
+    document.getElementById('addMedication').addEventListener('click', function() {
+        const input = document.getElementById('medicationInput');
+        const medList = document.getElementById('medicationList');
+        const medField = document.getElementById('medicationsField');
+        if (input.value.trim()) {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.textContent = input.value;
+            medList.appendChild(li);
+            const currentMeds = medField.value ? medField.value.split(',') : [];
+            currentMeds.push(input.value);
+            medField.value = currentMeds.join(',');
+            input.value = '';
+        }
+    });
+</script>
+{% endblock %}

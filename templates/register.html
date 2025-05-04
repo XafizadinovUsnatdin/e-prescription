@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Ro\'yxatdan o\'tish{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow p-4">
+                <h1 class="text-center mb-4">Ro\'yxatdan o\'tish</h1>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Foydalanuvchi nomi</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Parol</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Rol</label>
+                        <select name="role" class="form-control" required>
+                            <option value="doctor">Shifokor</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Ro\'yxatdan o\'tish</button>
+                </form>
+                <p class="text-center mt-3">Akkauntingiz bormi? <a href="{{ url_for('login') }}">Kiring</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

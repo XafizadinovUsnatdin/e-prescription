@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Retsept Ko'rish{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Retsept</h1>
+    <div class="card shadow p-4">
+        <h3>Retsept ID: {{ prescription.id }}</h3>
+        <p><strong>Bemor ID:</strong> {{ prescription.patient_id }}</p>
+        <p><strong>Tashxis:</strong> {{ prescription.diagnosis }}</p>
+        <p><strong>Dorilar:</strong> {{ prescription.medications }}</p>
+        <p><strong>Foydalanish:</strong> {{ prescription.usage or 'Yo\'q' }}</p>
+        <p><strong>Davomiyligi:</strong> {{ prescription.duration or 'Yo\'q' }}</p>
+        <p><strong>Qo\'shimcha ma\'lumot:</strong> {{ prescription.info or 'Yo\'q' }}</p>
+        <p><strong>Yaratilgan sana:</strong> {{ prescription.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
+    </div>
+</div>
+{% endblock %}

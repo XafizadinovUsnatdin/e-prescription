@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Barcha Retseptlar{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Barcha Retseptlar</h1>
+    {% if prescriptions %}
+        <div class="card shadow">
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Retsept ID</th>
+                            <th>Bemor ID</th>
+                            <th>Kasallik</th>
+                            <th>Dorilar</th>
+                            <th>Sana</th>
+                            <th>Harakatlar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in prescriptions %}
+                        <tr>
+                            <td>{{ p.id }}</td>
+                            <td>{{ p.patient_id }}</td>
+                            <td>{{ p.diagnosis }}</td>
+                            <td>{{ p.medications }}</td>
+
+                            <td>{{ p.created_at.strftime('%Y-%m-%d') }}</td>
+                            <td>
+                                <a href="{{ url_for('prescription_details', id=p.id) }}" class="btn btn-sm btn-info">Ko'rish</a>
+                                <a href="{{ url_for('print_prescription', id=p.id) }}" class="btn btn-sm btn-primary">Chop Etish</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% else %}
+        <p class="text-muted">Hozircha retseptlar yo'q.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,101 @@
+ID,Kasallik nomi,Kasallik turi,Belgilar,Tavsiya etilgan dorilar,Dori turi,Davolash muddati,Qabul qilish tartibi,Qo‘shimcha ma’lumotlar
+1,Qandli diabet,Surunkali,"Chanqoq, Susayish",Metformin,Gipoqlikemik,14 kun,Kuniga 3 mahal ovqatdan keyin,Dozalash shifokor nazoratida
+2,Astma,Nafas yo‘llari,"Yo‘tal, Nafas qisishi","Budesonid, Salbutamol",Bronxolitik,10 kun,Faqat kechqurun 1 tabletka,Ko‘p suyuqlik ichish kerak
+3,Sil,Infeksion,"Tunda terlash, Ozish","Isoniazid, Rifampitsin",Antibiotik,1 oy,Faqat kechqurun 1 tabletka,Dozalash shifokor nazoratida
+4,Qandli diabet,Surunkali,"Chanqoq, Susayish",Metformin,Gipoqlikemik,7 kun,Har 8 soatda 1 tabletka,O‘z vaqtida qabul qilish muhim
+5,Gripp,Virusli,"Sovqotish, Isitma","Paratsetamol, Tamiflu",Antiviral,10 kun,Faqat kechqurun 1 tabletka,Dozalash shifokor nazoratida
+6,Depressiya,Psixik,"Uyqusizlik, Kayfiyat tushishi","Fluoksetin, Sertralin",Antidepressant,1 oy,Kuniga 3 mahal ovqatdan keyin,Uy sharoitida davolanish mumkin
+7,Qandli diabet,Surunkali,"Chanqoq, Siydik ko‘payishi",Metformin,Gipoqlikemik,5 kun,Faqat kechqurun 1 tabletka,Dozalash shifokor nazoratida
+8,O‘pka shamollashi,Infeksion,"Yo‘tal, Isitma","Azitromitsin, Amoksitsillin",Antibiotik,7 kun,Kuniga 3 mahal ovqatdan keyin,Shifokorga murojaat tavsiya etiladi
+9,O‘pka shamollashi,Infeksion,"Isitma, Yo‘tal","Amoksitsillin, Azitromitsin",Antibiotik,1 oy,Har 8 soatda 1 tabletka,Ko‘p suyuqlik ichish kerak
+10,O‘pka shamollashi,Infeksion,"Nafas qiyinlashuvi, Isitma","Amoksitsillin, Azitromitsin",Antibiotik,5 kun,Faqat kechqurun 1 tabletka,O‘z vaqtida qabul qilish muhim
+11,Depressiya,Psixik,"Kayfiyat tushishi, Uyqusizlik",Fluoksetin,Antidepressant,10 kun,Kuniga 2 mahal 500mg,Shifokorga murojaat tavsiya etiladi
+12,Gripp,Virusli,"Isitma, Yo‘tal","Tamiflu, Paratsetamol",Antiviral,14 kun,Kuniga 3 mahal ovqatdan keyin,Ko‘p suyuqlik ichish kerak
+13,Tonsillit,Bakterial,"Tomoq og‘rig‘i, Isitma","Augmentin, Penitsillin",Antibiotik,7 kun,Har 8 soatda 1 tabletka,Dozalash shifokor nazoratida
+14,Sil,Infeksion,"Tunda terlash, Yo‘tal","Isoniazid, Rifampitsin",Antibiotik,14 kun,Faqat kechqurun 1 tabletka,Uy sharoitida davolanish mumkin
+15,Gripp,Virusli,"Yo‘tal, Isitma",Paratsetamol,Antiviral,5 kun,Kuniga 3 mahal ovqatdan keyin,Shifokorga murojaat tavsiya etiladi
+16,Gripp,Virusli,"Yo‘tal, Isitma",Tamiflu,Antiviral,5 kun,Kuniga 2 mahal 500mg,Uy sharoitida davolanish mumkin
+17,Sil,Infeksion,"Tunda terlash, Yo‘tal","Isoniazid, Rifampitsin",Antibiotik,10 kun,Kuniga 3 mahal ovqatdan keyin,Dozalash shifokor nazoratida
+18,Sil,Infeksion,"Ozish, Tunda terlash","Isoniazid, Rifampitsin",Antibiotik,7 kun,Har 12 soatda 1 kapsula,Uy sharoitida davolanish mumkin
+19,Yurak ishemik kasalligi,Yurak-qon tomir,"Ko‘krakda og‘riq, Nafas yetishmovchiligi",Nitrogliserin,Kardiyologik,7 kun,Kuniga 2 mahal 500mg,Uy sharoitida davolanish mumkin
+20,Yurak ishemik kasalligi,Yurak-qon tomir,"Nafas yetishmovchiligi, Ko‘krakda og‘riq",Nitrogliserin,Kardiyologik,5 kun,Kuniga 3 mahal ovqatdan keyin,O‘z vaqtida qabul qilish muhim
+21,Qandli diabet,Surunkali,"Chanqoq, Siydik ko‘payishi",Metformin,Gipoqlikemik,14 kun,Faqat kechqurun 1 tabletka,Ko‘p suyuqlik ichish kerak
+22,Gipertoniya,Yurak-qon tomir,"Bosim balandligi, Bosh og‘rig‘i",Enalapril,Kardiyologik,10 kun,Har 8 soatda 1 tabletka,Dozalash shifokor nazoratida
+23,Gipertoniya,Yurak-qon tomir,"Bosh og‘rig‘i, Bosim balandligi",Losartan,Kardiyologik,10 kun,Kuniga 3 mahal ovqatdan keyin,O‘z vaqtida qabul qilish muhim
+24,Gastrit,Hazm,"Qorin og‘rig‘i, Ko‘ngil aynishi","Ranitidin, Omeprazol",Gastroenterologik,7 kun,Har 12 soatda 1 kapsula,Dozalash shifokor nazoratida
+25,Gipertoniya,Yurak-qon tomir,"Bosim balandligi, Bosh og‘rig‘i","Enalapril, Losartan",Kardiyologik,14 kun,Faqat kechqurun 1 tabletka,Ko‘p suyuqlik ichish kerak
+26,Depressiya,Psixik,"Uyqusizlik, Kayfiyat tushishi",Fluoksetin,Antidepressant,5 kun,Har 12 soatda 1 kapsula,Dozalash shifokor nazoratida
+27,Depressiya,Psixik,"Uyqusizlik, Kayfiyat tushishi","Sertralin, Fluoksetin",Antidepressant,1 oy,Har 8 soatda 1 tabletka,Ko‘p suyuqlik ichish kerak
+28,Gastrit,Hazm,"Qorin og‘rig‘i, Ko‘ngil aynishi","Omeprazol, Ranitidin",Gastroenterologik,10 kun,Faqat kechqurun 1 tabletka,O‘z vaqtida qabul qilish muhim
+29,Depressiya,Psixik,"Kayfiyat tushishi, Uyqusizlik","Fluoksetin, Sertralin",Antidepressant,7 kun,Kuniga 2 mahal 500mg,Uy sharoitida davolanish mumkin
+30,Depressiya,Psixik,"Kayfiyat tushishi, Uyqusizlik","Fluoksetin, Sertralin",Antidepressant,1 oy,Kuniga 2 mahal 500mg,Uy sharoitida davolanish mumkin
+31,Gripp,Virusli,"Sovqotish, Yo‘tal","Tamiflu, Paratsetamol",Antiviral,7 kun,Kuniga 3 mahal ovqatdan keyin,O‘z vaqtida qabul qilish muhim
+32,Gastrit,Hazm,"Qorin og‘rig‘i, Ko‘ngil aynishi","Ranitidin, Omeprazol",Gastroenterologik,14 kun,Kuniga 3 mahal ovqatdan keyin,Uy sharoitida davolanish mumkin
+33,Qandli diabet,Surunkali,"Chanqoq, Siydik ko‘payishi",Metformin,Gipoqlikemik,1 oy,Har 12 soatda 1 kapsula,Shifokorga murojaat tavsiya etiladi
+34,Qandli diabet,Surunkali,"Siydik ko‘payishi, Susayish",Metformin,Gipoqlikemik,5 kun,Kuniga 3 mahal ovqatdan keyin,Dozalash shifokor nazoratida
+35,O‘pka shamollashi,Infeksion,"Yo‘tal, Isitma","Amoksitsillin, Azitromitsin",Antibiotik,5 kun,Faqat kechqurun 1 tabletka,Shifokorga murojaat tavsiya etiladi
+36,O‘pka shamollashi,Infeksion,"Isitma, Nafas qiyinlashuvi",Azitromitsin,Antibiotik,5 kun,Kuniga 2 mahal 500mg,O‘z vaqtida qabul qilish muhim
+37,Gripp,Virusli,"Yo‘tal, Isitma",Tamiflu,Antiviral,10 kun,Kuniga 3 mahal ovqatdan keyin,Shifokorga murojaat tavsiya etiladi
+38,Sil,Infeksion,"Tunda terlash, Yo‘tal",Rifampitsin,Antibiotik,5 kun,Kuniga 3 mahal ovqatdan keyin,Uy sharoitida davolanish mumkin
+39,Depressiya,Psixik,"Uyqusizlik, Kayfiyat tushishi","Sertralin, Fluoksetin",Antidepressant,1 oy,Faqat kechqurun 1 tabletka,Ko‘p suyuqlik ichish kerak
+40,Depressiya,Psixik,"Kayfiyat tushishi, Uyqusizlik","Sertralin, Fluoksetin",Antidepressant,7 kun,Kuniga 2 mahal 500mg,Ko‘p suyuqlik ichish kerak
+41,Gastrit,Hazm,"Qorin og‘rig‘i, Ko‘ngil aynishi","Ranitidin, Omeprazol",Gastroenterologik,10 kun,Har 8 soatda 1 tabletka,Dozalash shifokor nazoratida
+42,Yurak ishemik kasalligi,Yurak-qon tomir,"Ko‘krakda og‘riq, Nafas yetishmovchiligi",Atenolol,Kardiyologik,7 kun,Kuniga 2 mahal 500mg,Uy sharoitida davolanish mumkin
+43,Gripp,Virusli,"Sovqotish, Yo‘tal",Tamiflu,Antiviral,1 oy,Kuniga 2 mahal 500mg,Ko‘p suyuqlik ichish kerak
+44,Sil,Infeksion,"Ozish, Tunda terlash",Rifampitsin,Antibiotik,1 oy,Kuniga 3 mahal ovqatdan keyin,O‘z vaqtida qabul qilish muhim
+45,Yurak ishemik kasalligi,Yurak-qon tomir,"Nafas yetishmovchiligi, Ko‘krakda og‘riq","Atenolol, Nitrogliserin",Kardiyologik,7 kun,Kuniga 2 mahal 500mg,O‘z vaqtida qabul qilish muhim
+46,Qandli diabet,Surunkali,"Chanqoq, Susayish",Metformin,Gipoqlikemik,14 kun,Kuniga 2 mahal 500mg,Uy sharoitida davolanish mumkin
+47,Yurak ishemik kasalligi,Yurak-qon tomir,"Ko‘krakda og‘riq, Nafas yetishmovchiligi","Atenolol, Nitrogliserin",Kardiyologik,1 oy,Har 8 soatda 1 tabletka,Dozalash shifokor nazoratida
+48,Astma,Nafas yo‘llari,"Yo‘tal, Nafas qisishi","Budesonid, Salbutamol",Bronxolitik,14 kun,Kuniga 3 mahal ovqatdan keyin,Ko‘p suyuqlik ichish kerak
+49,Gipertoniya,Yurak-qon tomir,"Bosh og‘rig‘i, Bosim balandligi","Enalapril, Losartan",Kardiyologik,7 kun,Har 12 soatda 1 kapsula,Shifokorga murojaat tavsiya etiladi
+50,Qandli diabet,Surunkali,"Susayish, Chanqoq",Metformin,Gipoqlikemik,5 kun,Kuniga 2 mahal 500mg,Uy sharoitida davolanish mumkin
+51,Gastrit,Hazm,"Ko‘ngil aynishi, Qorin og‘rig‘i","Ranitidin, Omeprazol",Gastroenterologik,10 kun,Kuniga 3 mahal ovqatdan keyin,Uy sharoitida davolanish mumkin
+52,Tonsillit,Bakterial,"Tomoq og‘rig‘i, Isitma",Penitsillin,Antibiotik,14 kun,Har 12 soatda 1 kapsula,O‘z vaqtida qabul qilish muhim
+53,Gastrit,Hazm,"Ko‘ngil aynishi, Qorin og‘rig‘i","Omeprazol, Ranitidin",Gastroenterologik,10 kun,Har 12 soatda 1 kapsula,Ko‘p suyuqlik ichish kerak
+54,Qandli diabet,Surunkali,"Siydik ko‘payishi, Chanqoq",Metformin,Gipoqlikemik,10 kun,Kuniga 2 mahal 500mg,Shifokorga murojaat tavsiya etiladi
+55,Yurak ishemik kasalligi,Yurak-qon tomir,"Ko‘krakda og‘riq, Nafas yetishmovchiligi","Nitrogliserin, Atenolol",Kardiyologik,7 kun,Faqat kechqurun 1 tabletka,Shifokorga murojaat tavsiya etiladi
+56,Gastrit,Hazm,"Qorin og‘rig‘i, Ko‘ngil aynishi","Omeprazol, Ranitidin",Gastroenterologik,10 kun,Kuniga 3 mahal ovqatdan keyin,Ko‘p suyuqlik ichish kerak
+57,Sil,Infeksion,"Ozish, Tunda terlash",Isoniazid,Antibiotik,14 kun,Faqat kechqurun 1 tabletka,Uy sharoitida davolanish mumkin
+58,O‘pka shamollashi,Infeksion,"Isitma, Nafas qiyinlashuvi",Azitromitsin,Antibiotik,5 kun,Faqat kechqurun 1 tabletka,Uy sharoitida davolanish mumkin
+59,Gripp,Virusli,"Yo‘tal, Sovqotish","Paratsetamol, Tamiflu",Antiviral,14 kun,Har 12 soatda 1 kapsula,O‘z vaqtida qabul qilish muhim
+60,Tonsillit,Bakterial,"Isitma, Tomoq og‘rig‘i","Penitsillin, Augmentin",Antibiotik,1 oy,Har 8 soatda 1 tabletka,Dozalash shifokor nazoratida
+61,Qandli diabet,Surunkali,"Siydik ko‘payishi, Chanqoq",Metformin,Gipoqlikemik,10 kun,Faqat kechqurun 1 tabletka,Uy sharoitida davolanish mumkin
+62,Gipertoniya,Yurak-qon tomir,"Bosim balandligi, Bosh og‘rig‘i","Enalapril, Losartan",Kardiyologik,7 kun,Har 12 soatda 1 kapsula,Dozalash shifokor nazoratida
+63,Gipertoniya,Yurak-qon tomir,"Bosim balandligi, Bosh og‘rig‘i","Losartan, Enalapril",Kardiyologik,14 kun,Faqat kechqurun 1 tabletka,Uy sharoitida davolanish mumkin
+64,O‘pka shamollashi,Infeksion,"Isitma, Nafas qiyinlashuvi",Amoksitsillin,Antibiotik,7 kun,Faqat kechqurun 1 tabletka,Dozalash shifokor nazoratida
+65,Depressiya,Psixik,"Uyqusizlik, Kayfiyat tushishi","Fluoksetin, Sertralin",Antidepressant,14 kun,Faqat kechqurun 1 tabletka,Ko‘p suyuqlik ichish kerak
+66,Qandli diabet,Surunkali,"Susayish, Siydik ko‘payishi",Metformin,Gipoqlikemik,7 kun,Har 12 soatda 1 kapsula,Shifokorga murojaat tavsiya etiladi
+67,Qandli diabet,Surunkali,"Siydik ko‘payishi, Chanqoq",Metformin,Gipoqlikemik,7 kun,Kuniga 2 mahal 500mg,Ko‘p suyuqlik ichish kerak
+68,Astma,Nafas yo‘llari,"Nafas qisishi, Yo‘tal",Salbutamol,Bronxolitik,1 oy,Har 8 soatda 1 tabletka,Ko‘p suyuqlik ichish kerak
+69,Gripp,Virusli,"Yo‘tal, Sovqotish",Paratsetamol,Antiviral,14 kun,Faqat kechqurun 1 tabletka,O‘z vaqtida qabul qilish muhim
+70,Depressiya,Psixik,"Kayfiyat tushishi, Uyqusizlik",Fluoksetin,Antidepressant,7 kun,Kuniga 3 mahal ovqatdan keyin,Dozalash shifokor nazoratida
+71,Sil,Infeksion,"Tunda terlash, Yo‘tal","Rifampitsin, Isoniazid",Antibiotik,10 kun,Kuniga 2 mahal 500mg,Shifokorga murojaat tavsiya etiladi
+72,Gripp,Virusli,"Sovqotish, Yo‘tal",Paratsetamol,Antiviral,10 kun,Har 12 soatda 1 kapsula,Ko‘p suyuqlik ichish kerak
+73,Sil,Infeksion,"Yo‘tal, Ozish","Isoniazid, Rifampitsin",Antibiotik,7 kun,Kuniga 3 mahal ovqatdan keyin,Shifokorga murojaat tavsiya etiladi
+74,Gipertoniya,Yurak-qon tomir,"Bosh og‘rig‘i, Bosim balandligi","Losartan, Enalapril",Kardiyologik,14 kun,Har 12 soatda 1 kapsula,Dozalash shifokor nazoratida
+75,Qandli diabet,Surunkali,"Susayish, Siydik ko‘payishi",Metformin,Gipoqlikemik,1 oy,Kuniga 3 mahal ovqatdan keyin,Uy sharoitida davolanish mumkin
+76,Gripp,Virusli,"Isitma, Sovqotish","Paratsetamol, Tamiflu",Antiviral,14 kun,Har 8 soatda 1 tabletka,O‘z vaqtida qabul qilish muhim
+77,Gastrit,Hazm,"Ko‘ngil aynishi, Qorin og‘rig‘i","Omeprazol, Ranitidin",Gastroenterologik,7 kun,Faqat kechqurun 1 tabletka,O‘z vaqtida qabul qilish muhim
+78,Tonsillit,Bakterial,"Tomoq og‘rig‘i, Isitma","Penitsillin, Augmentin",Antibiotik,10 kun,Kuniga 2 mahal 500mg,O‘z vaqtida qabul qilish muhim
+79,O‘pka shamollashi,Infeksion,"Yo‘tal, Isitma","Amoksitsillin, Azitromitsin",Antibiotik,14 kun,Kuniga 2 mahal 500mg,Uy sharoitida davolanish mumkin
+80,Depressiya,Psixik,"Kayfiyat tushishi, Uyqusizlik",Sertralin,Antidepressant,14 kun,Har 8 soatda 1 tabletka,Shifokorga murojaat tavsiya etiladi
+81,Depressiya,Psixik,"Uyqusizlik, Kayfiyat tushishi",Fluoksetin,Antidepressant,14 kun,Har 8 soatda 1 tabletka,O‘z vaqtida qabul qilish muhim
+82,Gripp,Virusli,"Isitma, Sovqotish","Paratsetamol, Tamiflu",Antiviral,10 kun,Har 12 soatda 1 kapsula,Ko‘p suyuqlik ichish kerak
+83,Astma,Nafas yo‘llari,"Nafas qisishi, Yo‘tal","Salbutamol, Budesonid",Bronxolitik,5 kun,Kuniga 3 mahal ovqatdan keyin,O‘z vaqtida qabul qilish muhim
+84,Gastrit,Hazm,"Qorin og‘rig‘i, Ko‘ngil aynishi","Omeprazol, Ranitidin",Gastroenterologik,10 kun,Faqat kechqurun 1 tabletka,Dozalash shifokor nazoratida
+85,Qandli diabet,Surunkali,"Susayish, Chanqoq",Metformin,Gipoqlikemik,7 kun,Kuniga 2 mahal 500mg,Shifokorga murojaat tavsiya etiladi
+86,Yurak ishemik kasalligi,Yurak-qon tomir,"Ko‘krakda og‘riq, Nafas yetishmovchiligi","Nitrogliserin, Atenolol",Kardiyologik,14 kun,Kuniga 3 mahal ovqatdan keyin,Shifokorga murojaat tavsiya etiladi
+87,Gastrit,Hazm,"Qorin og‘rig‘i, Ko‘ngil aynishi","Ranitidin, Omeprazol",Gastroenterologik,5 kun,Har 8 soatda 1 tabletka,Uy sharoitida davolanish mumkin
+88,O‘pka shamollashi,Infeksion,"Nafas qiyinlashuvi, Yo‘tal","Amoksitsillin, Azitromitsin",Antibiotik,1 oy,Kuniga 3 mahal ovqatdan keyin,Uy sharoitida davolanish mumkin
+89,Depressiya,Psixik,"Kayfiyat tushishi, Uyqusizlik","Fluoksetin, Sertralin",Antidepressant,10 kun,Kuniga 2 mahal 500mg,Shifokorga murojaat tavsiya etiladi
+90,Tonsillit,Bakterial,"Tomoq og‘rig‘i, Isitma",Penitsillin,Antibiotik,7 kun,Har 12 soatda 1 kapsula,Dozalash shifokor nazoratida
+91,Qandli diabet,Surunkali,"Susayish, Chanqoq",Metformin,Gipoqlikemik,5 kun,Har 8 soatda 1 tabletka,Ko‘p suyuqlik ichish kerak
+92,O‘pka shamollashi,Infeksion,"Isitma, Yo‘tal",Azitromitsin,Antibiotik,5 kun,Har 12 soatda 1 kapsula,Ko‘p suyuqlik ichish kerak
+93,O‘pka shamollashi,Infeksion,"Yo‘tal, Nafas qiyinlashuvi",Azitromitsin,Antibiotik,7 kun,Kuniga 2 mahal 500mg,Shifokorga murojaat tavsiya etiladi
+94,Gipertoniya,Yurak-qon tomir,"Bosh og‘rig‘i, Bosim balandligi","Enalapril, Losartan",Kardiyologik,7 kun,Har 8 soatda 1 tabletka,Uy sharoitida davolanish mumkin
+95,Depressiya,Psixik,"Uyqusizlik, Kayfiyat tushishi","Fluoksetin, Sertralin",Antidepressant,14 kun,Har 12 soatda 1 kapsula,O‘z vaqtida qabul qilish muhim
+96,Gipertoniya,Yurak-qon tomir,"Bosim balandligi, Bosh og‘rig‘i","Enalapril, Losartan",Kardiyologik,7 kun,Har 12 soatda 1 kapsula,O‘z vaqtida qabul qilish muhim
+97,Astma,Nafas yo‘llari,"Nafas qisishi, Yo‘tal","Salbutamol, Budesonid",Bronxolitik,10 kun,Faqat kechqurun 1 tabletka,Uy sharoitida davolanish mumkin
+98,Qandli diabet,Surunkali,"Siydik ko‘payishi, Susayish",Metformin,Gipoqlikemik,5 kun,Har 12 soatda 1 kapsula,O‘z vaqtida qabul qilish muhim
+99,Yurak ishemik kasalligi,Yurak-qon tomir,"Ko‘krakda og‘riq, Nafas yetishmovchiligi","Nitrogliserin, Atenolol",Kardiyologik,10 kun,Har 12 soatda 1 kapsula,Uy sharoitida davolanish mumkin
+100,Yurak ishemik kasalligi,Yurak-qon tomir,"Ko‘krakda og‘riq, Nafas yetishmovchiligi","Nitrogliserin, Atenolol",Kardiyologik,10 kun,Kuniga 3 mahal ovqatdan keyin,O‘z vaqtida qabul qilish muhim

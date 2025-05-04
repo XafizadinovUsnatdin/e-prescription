@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Retseptni Chop Etish{% endblock %}
+{% block content %}
+<div class="container mt-5" id="printableArea">
+    <h1>Retsept</h1>
+    <div class="card shadow p-4">
+        <h3>Retsept ID: {{ prescription.id }}</h3>
+        <p><strong>Bemor ID:</strong> {{ prescription.patient_id }}</p>
+        <p><strong>Tashxis:</strong> {{ prescription.diagnosis }}</p>
+        <p><strong>Dorilar:</strong> {{ prescription.medications }}</p>
+        <p><strong>Foydalanish:</strong> {{ prescription.usage or 'Yo\'q' }}</p>
+        <p><strong>Davomiyligi:</strong> {{ prescription.duration or 'Yo\'q' }}</p>
+        <p><strong>Qo\'shimcha ma\'lumot:</strong> {{ prescription.info or 'Yo\'q' }}</p>
+        <p><strong>Yaratilgan sana:</strong> {{ prescription.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
+        <h4>QR Kod</h4>
+        <img src="{{ url_for('generate_qr', id=prescription.id) }}" alt="QR Code" style="max-width: 200px;">
+    </div>
+</div>
+<button onclick="printPrescription()" class="btn btn-primary mt-3">Chop Etish</button>
+
+<script>
+function printPrescription() {
+    var printContents = document.getElementById('printableArea').innerHTML;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+}
+</script>
+{% endblock %}

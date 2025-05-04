@@ -1,10 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>AI Recept Tekshiruvi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
-$END$
+<body class="bg-light">
+<div class="container mt-5">
+    <h1 class="text-center mb-4">💊 AI Recept Tekshiruvchi Tizimi</h1>
+
+    <form method="POST" class="bg-white p-4 rounded shadow">
+        <div class="row mb-3">
+            <div class="col">
+                <label>Bemor ID</label>
+                <input type="text" name="id" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Kasallik nomi</label>
+                <input type="text" name="diagnosis" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Kasallik turi</label>
+                <input type="text" name="type" class="form-control">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label>Belgilar</label>
+            <input type="text" name="symptoms" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label>Shifokor yozgan dorilar (vergul bilan)</label>
+            <input type="text" name="medications" class="form-control" required>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label>Dori turi</label>
+                <input type="text" name="drug_type" class="form-control">
+            </div>
+            <div class="col">
+                <label>Davolash muddati</label>
+                <input type="text" name="duration" class="form-control">
+            </div>
+            <div class="col">
+                <label>Qabul qilish tartibi</label>
+                <input type="text" name="usage" class="form-control">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label>Qo‘shimcha ma’lumotlar</label>
+            <textarea name="info" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">AI Tekshirsin</button>
+    </form>
+
+    {% if errors %}
+        <div class="alert alert-danger mt-3">
+            {% for error in errors %}
+                <div>{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if result %}
+        <div class="card mt-4 shadow">
+            <div class="card-header bg-success text-white">
+                <h4>✅ AI Bahosi: {{ result.ai_score }}%</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Retsept ID (QR kod uchun):</strong> {{ result.prescription_id }}</p>
+                <p><strong>Bemor ID:</strong> {{ result.patient_id }}</p>
+                <p><strong>Kasallik nomi:</strong> {{ result.kasallik }}</p>
+                <p><strong>Dori turi:</strong> {{ result.dori_turi }}</p>
+                <p><strong>Davolash muddati:</strong> {{ result.davolash }}</p>
+                <p><strong>Qabul qilish tartibi:</strong> {{ result.tartib }}</p>
+                <p><strong>Qo‘shimcha ma’lumot:</strong> {{ result.malumot }}</p>
+
+                <hr>
+                <p style="color:green;"><strong>✅ To‘g‘ri dorilar:</strong> {{ result.correct }}</p>
+                <p style="color:red;"><strong>❌ Noto‘g‘ri dorilar:</strong> {{ result.incorrect }}</p>
+                <p style="color:blue;"><strong>📋 Zarur dorilar:</strong> {{ result.essential }}</p>
+                <p style="color:orange;"><strong>⚠️ Zarur bo‘lmagan dorilar:</strong> {{ result.non_essential }}</p>
+            </div>
+        </div>
+    {% endif %}
+
+    <hr>
+    <h4 class="mt-4">💬 Shifokorlar fikri:</h4>
+    <form method="post" action="/comment" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="comment" class="form-control" placeholder="Izoh yozing..." required>
+            <button class="btn btn-secondary" type="submit">Yuborish</button>
+        </div>
+    </form>
+
+    {% for c in comments %}
+        <div class="alert alert-secondary">{{ c }}</div>
+    {% endfor %}
+</div>
 </body>
 </html>

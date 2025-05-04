@@ -1,10 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Admin Paneli{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Admin Paneli</h1>
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Foydalanuvchilar</h5>
+                    <p class="card-text">{{ user_count }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Retseptlar</h5>
+                    <p class="card-text">{{ prescription_count }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Izohlar</h5>
+                    <p class="card-text">{{ comment_count }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Audit Loglari</h5>
+                    <p class="card-text">{{ audit_log_count }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Shifokorlar</h2>
+    <div class="card shadow mb-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>AI Reytingi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doctor in doctors %}
+                    <tr>
+                        <td>{{ doctor.username }}</td>
+                        <td>{{ doctor.rating|round(1) }}%</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Retseptlar</h2>
+    <div class="card shadow">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Bemor ID</th>
+                    <th>Shifokor</th>
+                    <th>Kasallik</th>
+                    <th>Dorilar</th>
+                    <th>AI Bahosi</th>
+                    <th>Dori Moslik Darajasi</th>
+                    <th>Harakatlar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in prescriptions %}
+                    <tr>
+                        <td>{{ p.id }}</td>
+                        <td>{{ p.patient_id }}</td>
+                        <td>{{ p.doctor.username }}</td>
+                        <td>{{ p.diagnosis }}</td>
+                        <td>{{ p.medications }}</td>
+                        <td>{{ p.ai_score }}%</td>
+                        <td>
+                            {% if p.confidence_scores %}
+                                <ul class="list-group list-group-flush">
+                                    {% for score in p.confidence_scores.split(',') %}
+                                        {% set med, conf = score.split(':') %}
+                                        <li class="list-group-item {{ 'text-red-500 font-bold' if med in (p.incorrect_meds.split(',') + p.non_essential_meds.split(',')) else 'text-green-500' }}">
+                                            {{ med }}: {{ (conf|float * 100)|int }}%
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                Yo'q
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('prescription_details', id=p.id) }}" class="btn btn-sm btn-info">Ko'rish</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-4">
+        <a href="{{ url_for('view_audit_logs') }}" class="btn btn-primary">Audit Loglarini Ko'rish</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,10 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Bemor Retsepti{% endblock %}
+{% block content %}
+<div class="container mx-auto mt-8 p-4">
+    <h1 class="text-2xl font-bold mb-4">Bemor Retsepti</h1>
+    
+    <!-- Prescription Details -->
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 class="text-xl font-semibold mb-2">Retsept Ma'lumotlari</h2>
+        <p><strong>Bemor ID:</strong> {{ prescription.patient_id }}</p>
+        <p><strong>Tashxis:</strong> {{ prescription.diagnosis }}</p>
+        <p><strong>Dorilar:</strong> {{ prescription.medications }}</p>
+        <p><strong>Shifokor:</strong> {{ prescription.doctor.username }}</p>
+        <p><strong>Yaratilgan sana:</strong> {{ prescription.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="mb-6">
+        <h2 class="text-xl font-semibold mb-2">Dorixona Qidirish</h2>
+        <div class="flex flex-wrap gap-4">
+            <select id="cityFilter" class="border rounded p-2">
+                <option value="all">Barcha shaharlar</option>
+                <option value="21">Toshkent</option>
+                <option value="22">Samarqand</option>
+                <option value="23">Buxoro</option>
+                <option value="24">Andijon</option>
+            </select>
+            <button id="closestBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Eng yaqin</button>
+            <button id="cheapestBtn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Eng arzon</button>
+            <button id="allMedsBtn" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">Hamma dorilar</button>
+        </div>
+    </div>
+
+    <!-- Pharmacy List -->
+    <div id="pharmacyList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for pharmacy in pharmacies %}
+            <div class="pharmacy-card bg-white shadow-md rounded-lg p-4"
+                 data-distance="{{ pharmacy.distance|default(9999) }}"
+                 data-price="{{ pharmacy.total_price|default(999999) }}"
+                 data-all-meds="{{ 'true' if pharmacy.all_meds_available else 'false' }}"
+                 data-region="{{ pharmacy.regionId|default('0') }}">
+                <h3 class="text-lg font-semibold">{{ pharmacy.name }}</h3>
+                <p><strong>Manzil:</strong> {{ pharmacy.address }}</p>
+                <p><strong>Masofa:</strong> {{ pharmacy.distance|default('Noma\'lum') }} km</p>
+                <p><strong>Narx:</strong> {{ pharmacy.total_price|default('Noma\'lum') }} UZS</p>
+                <p><strong>Mavjud dorilar:</strong> {{ pharmacy.available_meds|join(', ') }}</p>
+                {% if pharmacy.all_meds_available %}
+                    <p class="text-green-500 font-bold">Hamma dorilar mavjud</p>
+                {% else %}
+                    <p class="text-red-500">Ba'zi dorilar mavjud emas</p>
+                {% endif %}
+                <a href="{{ pharmacy.link }}" target="_blank" class="text-blue-500 hover:underline">Tashrif buyurish</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    const pharmacyList = document.getElementById('pharmacyList');
+    const cityFilter = document.getElementById('cityFilter');
+    const closestBtn = document.getElementById('closestBtn');
+    const cheapestBtn = document.getElementById('cheapestBtn');
+    const allMedsBtn = document.getElementById('allMedsBtn');
+
+    // Cache pharmacy cards
+    const pharmacyCards = Array.from(document.querySelectorAll('.pharmacy-card')).map(card => card.cloneNode(true));
+
+    function applyFilters() {
+        console.log(`Applying filters, city: ${cityFilter.value}`);
+        const selectedCity = cityFilter.value;
+        let filteredCards = pharmacyCards;
+
+        // Filter by city
+        if (selectedCity !== 'all') {
+            filteredCards = filteredCards.filter(card => {
+                const region = card.dataset.region || '0';
+                const match = region === selectedCity;
+                if (!match) console.log(`Filtered out ${card.querySelector('h3').textContent}: region ${region} != ${selectedCity}`);
+                return match;
+            });
+            console.log(`Filtered by city ${selectedCity}: ${filteredCards.length} pharmacies`);
+        } else {
+            console.log('Showing all regions');
+        }
+
+        // Update UI
+        pharmacyList.innerHTML = '';
+        if (filteredCards.length === 0) {
+            pharmacyList.innerHTML = '<p class="text-gray-500">Hech qanday dorixona topilmadi.</p>';
+            console.log('No pharmacies found after filtering');
+        } else {
+            filteredCards.forEach(card => pharmacyList.appendChild(card.cloneNode(true)));
+            console.log(`Displaying ${filteredCards.length} pharmacies`);
+        }
+    }
+
+    function sortPharmacies(criteria) {
+        console.log(`Sorting by ${criteria}`);
+        const currentCards = Array.from(pharmacyList.querySelectorAll('.pharmacy-card'));
+        if (currentCards.length === 0) {
+            console.log('No pharmacies to sort');
+            pharmacyList.innerHTML = '<p class="text-gray-500">Hech qanday dorixona topilmadi.</p>';
+            return;
+        }
+
+        const sortedCards = currentCards.sort((a, b) => {
+            const aDistance = parseFloat(a.dataset.distance) || 9999;
+            const bDistance = parseFloat(b.dataset.distance) || 9999;
+            const aPrice = parseFloat(a.dataset.price) || 999999;
+            const bPrice = parseFloat(b.dataset.price) || 999999;
+            const aAllMeds = a.dataset.allMeds === 'true';
+            const bAllMeds = b.dataset.allMeds === 'true';
+
+            if (!a.dataset.distance) console.warn(`Missing distance for ${a.querySelector('h3').textContent}`);
+            if (!a.dataset.price) console.warn(`Missing price for ${a.querySelector('h3').textContent}`);
+
+            if (criteria === 'closest') return aDistance - bDistance;
+            if (criteria === 'cheapest') return aPrice - bPrice;
+            if (criteria === 'allMeds') return bAllMeds - aAllMeds;
+            return 0;
+        });
+
+        pharmacyList.innerHTML = '';
+        sortedCards.forEach(card => pharmacyList.appendChild(card.cloneNode(true)));
+        console.log(`Sorted ${sortedCards.length} pharmacies by ${criteria}`);
+    }
+
+    // Event listeners
+    cityFilter.addEventListener('change', () => {
+        console.log(`City changed to ${cityFilter.value}`);
+        applyFilters();
+    });
+    closestBtn.addEventListener('click', () => sortPharmacies('closest'));
+    cheapestBtn.addEventListener('click', () => sortPharmacies('cheapest'));
+    allMedsBtn.addEventListener('click', () => sortPharmacies('allMeds'));
+
+    // Initial load
+    console.log(`Loaded ${pharmacyCards.length} pharmacies`);
+    applyFilters();
+</script>
+{% endblock %}

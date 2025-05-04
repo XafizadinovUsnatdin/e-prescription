@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Audit Loglari{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Audit Loglari</h1>
+    {% if logs %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Sana</th>
+                    <th>Foydalanuvchi</th>
+                    <th>Harakat</th>
+                    <th>Retsept ID</th>
+                    <th>Tafsilotlar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr>
+                    <td>{{ log.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>{{ log.user.username if log.user else 'Noma\'lum' }}</td>
+                    <td>{{ log.action }}</td>
+                    <td>{{ log.prescription_id or 'Yo\'q' }}</td>
+                    <td>{{ log.details }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Hozircha audit loglari yo\'q.</p>
+    {% endif %}
+</div>
+{% endblock %}

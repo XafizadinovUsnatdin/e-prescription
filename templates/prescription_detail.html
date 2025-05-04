@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription Detail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-$END$
+    <h2>Prescription Details</h2>
+    <p><strong>Doctor:</strong> {{ prescription.doctor_name }}</p>
+    <p><strong>Diagnosis:</strong> {{ prescription.diagnosis }}</p>
+    <p><strong>Medication:</strong> {{ prescription.medication }}</p>
+
+    <h3>AI Evaluation</h3>
+    <p><strong>Confidence Score:</strong> {{ ai_confidence }}%</p>
+    <p><strong>AI Message:</strong> {{ ai_message }}</p>
+
+    <h3>Comments</h3>
+    <form action="/add_comment" method="POST">
+        <input type="hidden" name="prescription_id" value="{{ prescription.id }}">
+        <label for="comment">Add Comment:</label>
+        <textarea id="comment" name="comment" required></textarea><br>
+        <button type="submit">Submit Comment</button>
+    </form>
+
+    <ul>
+        {% for comment in prescription.comments %}
+            <li>{{ comment.comment_text }}</li>
+        {% endfor %}
+    </ul>
+
+    <br><a href="/">Back to Home</a>
 </body>
 </html>
